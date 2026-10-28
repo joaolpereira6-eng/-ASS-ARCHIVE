@@ -1,5 +1,5 @@
 /**
- * Chatbot Widget Auto-Injetável - Estilo [ASS] ARCHIVE
+ * Chatbot Widget Auto-Injetável - Estilo [ASS] ARCHIVE (Controlo Direto de Visibilidade)
  */
 (function () {
   if (window.chatbotInicializado) return;
@@ -54,14 +54,10 @@
       border: 1px solid rgba(57, 255, 20, 0.4) !important;
       border-radius: 16px !important;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
-      display: flex !important;
+      display: none !important;
       flex-direction: column !important;
       overflow: hidden !important;
       z-index: 99999999 !important;
-    }
-
-    .faq-hidden {
-      display: none !important;
     }
 
     .faq-header {
@@ -230,7 +226,7 @@
       </svg>
     </button>
 
-    <div id="faq-chat-window" class="faq-hidden">
+    <div id="faq-chat-window">
       <div class="faq-header">
         <h3>[ASS] BOT ARCHIVE</h3>
         <div class="faq-header-actions">
@@ -281,6 +277,9 @@
     const sendBtn = document.getElementById("faq-send-btn");
     const input = document.getElementById("faq-input");
     const jsonFileInput = document.getElementById("faq-json-file");
+
+    // Força o estado inicial a escondido
+    chatWindow.style.setProperty("display", "none", "important");
 
     function addMessage(texto, tipo) {
       const div = document.createElement("div");
@@ -366,14 +365,14 @@
     }
 
     function toggleChat() {
-      const estaFechado = chatWindow.classList.contains("faq-hidden");
-      if (estaFechado) {
-        chatWindow.classList.remove("faq-hidden");
+      const estaOculto = chatWindow.style.display === "none";
+      if (estaOculto) {
+        chatWindow.style.setProperty("display", "flex", "important");
         iconOpen.style.display = "none";
         iconClose.style.display = "block";
         input.focus();
       } else {
-        chatWindow.classList.add("faq-hidden");
+        chatWindow.style.setProperty("display", "none", "important");
         iconOpen.style.display = "block";
         iconClose.style.display = "none";
       }
