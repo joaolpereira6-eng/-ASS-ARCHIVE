@@ -72,7 +72,7 @@ h2 { font-family: var(--font-head); font-size: 2.2rem; text-transform: uppercase
 .sobre-box { background: var(--bg); padding: 25px; border: 1px solid var(--border-strong); border-radius: 12px; text-align: center; box-shadow: 0 0 12px rgba(57, 255, 20, 0.15); }
 .sobre-box h3 { font-family: var(--font-head); font-size: 2.5rem; color: var(--accent); }
 
-/* Cards & Grids com Elevação no Hover */
+/* Cards do Catálogo */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
 .card { 
     background: var(--card); 
@@ -89,54 +89,119 @@ h2 { font-family: var(--font-head); font-size: 2.2rem; text-transform: uppercase
 .card h3 { font-family: var(--font-head); margin-top: 12px; margin-bottom: 6px; }
 .card p { color: var(--muted); font-size: 0.88rem; }
 
-/* Callout */
-.callout { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-
-/* Galeria: Molduras com Fundo Branco */
-.galeria-card { 
-    position: relative; 
-    border-radius: 14px; 
-    overflow: hidden; 
-    border: 1px solid var(--border); 
-    background: #ffffff; 
-    display: flex; 
-    align-items: center; 
+.product-img-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 12px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border: 1px solid var(--border);
 }
-.galeria-card img { 
-    height: 260px; 
-    width: 100%; 
-    object-fit: contain; 
-    object-position: center; 
-    border-radius: 10px;
+
+.product-img-box img {
+    height: 240px;
+    object-fit: contain;
     transition: transform 0.4s ease;
 }
 
-/* Zoom na imagem ao passar o cursor */
-.card:hover .galeria-card img,
-.galeria-card:hover img {
+.card:hover .product-img-box img {
     transform: scale(1.08);
 }
 
-.galeria-card:hover { 
-    border-color: var(--border-strong); 
-    box-shadow: 0 0 12px rgba(57, 255, 20, 0.3);
+/* Callout */
+.callout { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+
+/* ========================================================
+   GALERIA: EFEITO DE GIRO 3D (CARD FLIP ON HOVER)
+   ======================================================== */
+.galeria-card {
+    background-color: transparent;
+    height: 300px;
+    perspective: 1000px; /* Cria profundidade para o giro 3D */
+    cursor: pointer;
 }
 
-.galeria-card h3 { 
-    position: absolute; 
-    bottom: 10px; 
-    left: 10px; 
-    background: rgba(0,0,0,0.92); 
-    color: var(--accent); 
-    padding: 4px 10px; 
-    font-family: var(--font-head); 
-    font-size: 0.85rem; 
-    border-radius: 6px; 
-    border: 1px solid var(--border); 
-    z-index: 2;
+.galeria-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Quando o cursor passa por cima, o card gira 180 graus no eixo Y */
+.galeria-card:hover .galeria-card-inner {
+    transform: rotateY(180deg);
+}
+
+.galeria-card-front, .galeria-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; /* Esconde o verso quando está de costas */
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+/* FRENTE DO CARD (Foto com Fundo Branco) */
+.galeria-card-front {
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+.galeria-card-front img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.galeria-card-front h3 {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(0, 0, 0, 0.92);
+    color: var(--accent);
+    padding: 6px 12px;
+    font-family: var(--font-head);
+    font-size: 0.85rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+/* VERSO DO CARD (Descrição Dark com Borda Neon) */
+.galeria-card-back {
+    background: var(--card);
+    color: var(--text);
+    transform: rotateY(180deg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-color: var(--border-strong);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.25);
+}
+
+.galeria-card-back h3 {
+    font-family: var(--font-head);
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin: 8px 0 12px 0;
+}
+
+.galeria-card-back p {
+    color: var(--text);
+    font-size: 0.88rem;
+    line-height: 1.5;
 }
 
 /* Contato & Form */
