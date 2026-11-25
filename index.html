@@ -10,6 +10,7 @@
 </head>
 <body>
 
+    <!-- NOVO HEADER ÚNICO ESTILO NAMED COLLECTIVE (SEM REPETIÇÃO) -->
     <header class="header-archive">
         <div class="header-archive-container">
             <div class="header-archive-left">
@@ -38,6 +39,7 @@
                 </nav>
             </div>
 
+            <!-- LADO DIREITO: GATO GIRANDO + BOTÃO AGENDAR -->
             <div class="header-archive-right">
                 <div class="aero-cat-corner">
                     <img src="ass/gato-girando.gif" alt="OIIA Spinning Cat">
@@ -47,8 +49,10 @@
         </div>
     </header>
 
+    <!-- 2. CONTEÚDO PRINCIPAL SEMÂNTICO -->
     <main id="conteudo-principal" class="main-with-archive-header">
 
+        <!-- 3. SOBRE O LAB (COM LISTA ORDENADA, DEFINIÇÃO E VÍDEO) -->
         <section id="sobre" class="sobre">
             <div>
                 <span class="tag">☣️ SOBRE O LAB</span>
@@ -90,33 +94,92 @@
             </div>
         </section>
 
+        <!-- 4. CATÁLOGO DE PRODUTOS / DROP COM FLIP CARD 3D CSS PURO -->
         <section id="produtos">
             <span class="tag">☣️ ARCHIVE SELECTION</span>
             <h2>Peças em Destaque</h2>
             <div class="grid">
-                <article class="card">
-                    <div class="product-img-box"><img src="ass/blusa.jpg" alt="Tee Toxic Skull"></div>
-                    <h3>Tee Toxic Skull Y2K</h3>
-                    <p>Estampa verde toxic <strong>oversized</strong> com detalhes em caveira e bordados <em>goth</em>.</p>
+                
+                <!-- CARD 1 -->
+                <article class="card-container" tabindex="0">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="ass/blusa.jpg" alt="Tee Toxic Skull Y2K">
+                            <div class="card-front-title">
+                                <span>01 // ARCHIVE TEE</span>
+                                <h3>Tee Toxic Skull Y2K</h3>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <span class="tag">1-OF-1 SELECTION</span>
+                            <h3>Tee Toxic Skull Y2K</h3>
+                            <p>Estampa verde toxic <strong>oversized</strong> com detalhes em caveira e bordados <em>goth</em>. Malha heavyweight 320gsm.</p>
+                            <a href="#contato" class="btn btn-sm">Reservar Peça ➔</a>
+                        </div>
+                    </div>
                 </article>
-                <article class="card">
-                    <div class="product-img-box"><img src="ass/calçaver.jpg" alt="Calça Baggy Red Tribal"></div>
-                    <h3>Calça Baggy Red Tribal</h3>
-                    <p>Corte baggy em sarja preta com bordados tribais em linha vermelha neon.</p>
+
+                <!-- CARD 2 -->
+                <article class="card-container" tabindex="0">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="ass/calçaver.jpg" alt="Calça Baggy Red Tribal">
+                            <div class="card-front-title">
+                                <span>02 // BAGGY DENIM</span>
+                                <h3>Calça Baggy Red Tribal</h3>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <span class="tag">HEAVY SARJA 14OZ</span>
+                            <h3>Calça Baggy Red Tribal</h3>
+                            <p>Corte baggy amplo em sarja preta com bordados tribais em linha vermelha neon e costura reforçada.</p>
+                            <a href="#contato" class="btn btn-sm">Reservar Peça ➔</a>
+                        </div>
+                    </div>
                 </article>
-                <article class="card">
-                    <div class="product-img-box"><img src="ass/calça.jpg" alt="Calça Wide Plaid Cuff"></div>
-                    <h3>Calça Wide Plaid Cuff</h3>
-                    <p>Moletom pesado estonado com forro interno xadrez na barra dobrada.</p>
+
+                <!-- CARD 3 -->
+                <article class="card-container" tabindex="0">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="ass/calça.jpg" alt="Calça Wide Plaid Cuff">
+                            <div class="card-front-title">
+                                <span>03 // WIDE FLEECE</span>
+                                <h3>Calça Wide Plaid Cuff</h3>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <span class="tag">CUSTOM CUFF</span>
+                            <h3>Calça Wide Plaid Cuff</h3>
+                            <p>Moletom pesado estonado com forro interno xadrez na barra dobrada e caimento reto estruturado.</p>
+                            <a href="#contato" class="btn btn-sm">Reservar Peça ➔</a>
+                        </div>
+                    </div>
                 </article>
-                <article class="card">
-                    <div class="product-img-box"><img src="ass/monster.jpg" alt="Tee Monster Supercross"></div>
-                    <h3>Tee Monster Supercross 2015</h3>
-                    <p>Graphic tee vintage com lavagem dark wash e estampa verde neon.</p>
+
+                <!-- CARD 4 -->
+                <article class="card-container" tabindex="0">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="ass/monster.jpg" alt="Tee Monster Supercross 2015">
+                            <div class="card-front-title">
+                                <span>04 // VINTAGE ARCHIVE</span>
+                                <h3>Tee Monster Supercross 2015</h3>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <span class="tag">DARK ACID WASH</span>
+                            <h3>Tee Monster Supercross</h3>
+                            <p>Graphic tee vintage com lavagem dark wash artesanal e estampa verde neon de alto contraste.</p>
+                            <a href="#contato" class="btn btn-sm">Reservar Peça ➔</a>
+                        </div>
+                    </div>
                 </article>
+
             </div>
         </section>
 
+        <!-- 5. TABELA ESTRUTURADA (<thead>, <tbody> E colspan) -->
         <section id="tabela-servicos">
             <span class="tag">☣️ TABELA TÉCNICA</span>
             <h2>Serviços &amp; Valores Base</h2>
@@ -158,6 +221,7 @@
             </div>
         </section>
 
+        <!-- 6. GALERIA DO LAB (SLIDER BANNER + LIGHTBOX 100% CSS) -->
         <section id="galeria">
             <span class="tag">☣️ LOOKBOOK &amp; RESULTADOS</span>
             <h2>Galeria do Lab</h2>
@@ -199,6 +263,7 @@
             </div>
         </section>
 
+        <!-- 7. CONTATO & FORMULÁRIO COMPLETO COM VALIDAÇÃO E REGEX -->
         <section id="contato" class="contato">
             <div>
                 <span class="tag">☣️ ATENDIMENTO</span>
@@ -264,6 +329,7 @@
 
     </main>
 
+    <!-- 8. MODAIS LIGHTBOX 100% CSS -->
     <div class="lightbox" id="lb-cargo">
         <a href="#galeria" class="lightbox-overlay" aria-label="Fechar imagem"></a>
         <div class="lightbox-content">
@@ -300,15 +366,18 @@
         </div>
     </div>
 
+    <!-- 9. RODAPÉ -->
     <footer class="footer">
         <p>&copy; 2026 [ASS] ARCHIVE &amp; Custom Services. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- BANNER DE COOKIES -->
     <div id="banner-cookies" class="banner-cookies">
         <p>Utilizamos cookies para personalizar sua experiência. Ao continuar navegando, você concorda com a nossa política.</p>
         <button type="button" id="btn-aceitar-cookies" class="btn-cookies">Entendi e Aceito</button>
     </div>
 
+    <!-- SCRIPTS -->
     <script>
         const bannerCookies = document.getElementById('banner-cookies');
         const btnAceitar = document.getElementById('btn-aceitar-cookies');

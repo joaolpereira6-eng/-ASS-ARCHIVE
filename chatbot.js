@@ -1,3 +1,6 @@
+/**
+ * Chatbot Widget Auto-Injetável - Estilo [ASS] ARCHIVE (Controlo Direto de Visibilidade)
+ */
 (function () {
   if (window.chatbotInicializado) return;
   window.chatbotInicializado = true;
@@ -275,6 +278,7 @@
     const input = document.getElementById("faq-input");
     const jsonFileInput = document.getElementById("faq-json-file");
 
+    // Força o estado inicial a escondido
     chatWindow.style.setProperty("display", "none", "important");
 
     function addMessage(texto, tipo) {
